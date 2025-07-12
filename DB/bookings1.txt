@@ -1,0 +1,90 @@
+Last login: Sat May 31 17:43:11 on ttys000
+/dev/fd/12:18: command not found: compdef
+(base) maithilimahadik@Maithilis-MacBook ~ % mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 19
+Server version: 9.3.0 Homebrew
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use ticket_booking_system;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> INSERT INTO events (title, description, venue, event_date, total_seats, available_seats, price, category) VALUES
+    -> ('Bollywood Music Night', 'Live performance by top Bollywood playback singers', 'Wankhede Stadium, Mumbai', '2025-08-01 19:00:00', 15000, 14500, 1200.00, 'Music'),
+    -> ('Classical Raaga Festival', 'An evening of Indian classical music featuring top artists', 'Siri Fort Auditorium, Delhi', '2025-07-20 18:00:00', 800, 750, 600.00, 'Music'),
+    -> ('Stand-Up Comedy Bash', 'Laugh out loud with India\'s top comedians', 'The Habitat, Mumbai', '2025-06-25 20:00:00', 400, 370, 750.00, 'Comedy'),
+    -> ('Hyderabad Laugh Fest', 'Stand-up show with regional language comedians', 'Shilpakala Vedika, Hyderabad', '2025-07-15 19:00:00', 500, 480, 500.00, 'Comedy'),
+    -> ('India Tech Summit 2025', 'Explore India\'s innovations in AI, blockchain, and startups', 'Bangalore International Exhibition Centre', '2025-09-10 10:00:00', 3000, 2900, 2500.00, 'Technology'),
+    -> ('AI & Robotics Expo', 'Showcasing the future of automation in India', 'Pragati Maidan, Delhi', '2025-10-05 11:00:00', 2000, 1950, 1800.00, 'Technology'),
+    -> ('IPL Final 2025', 'The ultimate showdown of IPL cricket giants', 'Narendra Modi Stadium, Ahmedabad', '2025-05-29 18:30:00', 132000, 130000, 2500.00, 'Sports'),
+    -> ('ISL Grand Finale', 'Indian Super League football final match', 'Jawaharlal Nehru Stadium, Kochi', '2025-12-12 19:00:00', 40000, 38000, 1000.00, 'Sports'),
+    -> ('Shakespeare in India', 'Adaptation of Macbeth by Indian theatre artists', 'Ravindra Kalakshetra, Bengaluru', '2025-08-18 18:30:00', 600, 550, 400.00, 'Theatre'),
+    -> ('Marathi Natya Mahotsav', 'Celebration of Marathi plays and culture', 'Bal Gandharva Rang Mandir, Pune', '2025-07-10 17:00:00', 500, 470, 300.00, 'Theatre'),
+    -> ('Art of Living Mega Satsang', 'Guided meditation and wisdom talk by Sri Sri Ravi Shankar', 'Art of Living International Center, Bengaluru', '2025-06-22 07:00:00', 5000, 4800, 0.00, 'Spiritual'),
+    -> ('Kumbh Darshan Special', 'Virtual tour and discourse on the spiritual essence of Kumbh Mela', 'Online Event', '2025-09-05 08:00:00', 10000, 9900, 100.00, 'Spiritual'),
+    -> ('IIT-JEE Bootcamp', 'Crash course and strategies by top IITians', 'Chennai Trade Centre', '2025-06-15 09:00:00', 1000, 900, 1500.00, 'Education'),
+    -> ('NEET Masterclass', 'One-day seminar with top NEET mentors and doctors', 'Science City Auditorium, Kolkata', '2025-07-05 09:30:00', 800, 780, 1200.00, 'Education');
+Query OK, 14 rows affected (0.01 sec)
+Records: 14  Duplicates: 0  Warnings: 0
+
+mysql> select * from events;
++----+----------------------------+-------------------------------------------------------------------+-----------------------------------------------+---------------------+-------------+-----------------+---------+-----------+------------+---------------------+
+| id | title                      | description                                                       | venue                                         | event_date          | total_seats | available_seats | price   | image_url | category   | created_at          |
++----+----------------------------+-------------------------------------------------------------------+-----------------------------------------------+---------------------+-------------+-----------------+---------+-----------+------------+---------------------+
+|  1 | Rock Concert 2025          | Amazing rock concert with top artists                             | Madison Square Garden                         | 2025-07-15 20:00:00 |        1000 |             950 |   75.00 | NULL      | Music      | 2025-05-30 19:51:03 |
+|  2 | Comedy Night Special       | Hilarious comedy show with renowned comedians                     | Comedy Club Downtown                          | 2025-06-20 19:30:00 |         300 |             277 |   45.00 | NULL      | Comedy     | 2025-05-30 19:51:03 |
+|  3 | Tech Conference 2025       | Latest trends in technology and innovation                        | Convention Center                             | 2025-08-10 09:00:00 |         500 |             450 |  120.00 | NULL      | Technology | 2025-05-30 19:51:03 |
+|  4 | Football Championship      | Championship match between top teams                              | Sports Stadium                                | 2025-09-05 16:00:00 |       50000 |           48500 |   85.00 | NULL      | Sports     | 2025-05-30 19:51:03 |
+|  5 | Bollywood Music Night      | Live performance by top Bollywood playback singers                | Wankhede Stadium, Mumbai                      | 2025-08-01 19:00:00 |       15000 |           14500 | 1200.00 | NULL      | Music      | 2025-05-31 18:16:59 |
+|  6 | Classical Raaga Festival   | An evening of Indian classical music featuring top artists        | Siri Fort Auditorium, Delhi                   | 2025-07-20 18:00:00 |         800 |             750 |  600.00 | NULL      | Music      | 2025-05-31 18:16:59 |
+|  7 | Stand-Up Comedy Bash       | Laugh out loud with India's top comedians                         | The Habitat, Mumbai                           | 2025-06-25 20:00:00 |         400 |             370 |  750.00 | NULL      | Comedy     | 2025-05-31 18:16:59 |
+|  8 | Hyderabad Laugh Fest       | Stand-up show with regional language comedians                    | Shilpakala Vedika, Hyderabad                  | 2025-07-15 19:00:00 |         500 |             480 |  500.00 | NULL      | Comedy     | 2025-05-31 18:16:59 |
+|  9 | India Tech Summit 2025     | Explore India's innovations in AI, blockchain, and startups       | Bangalore International Exhibition Centre     | 2025-09-10 10:00:00 |        3000 |            2900 | 2500.00 | NULL      | Technology | 2025-05-31 18:16:59 |
+| 10 | AI & Robotics Expo         | Showcasing the future of automation in India                      | Pragati Maidan, Delhi                         | 2025-10-05 11:00:00 |        2000 |            1950 | 1800.00 | NULL      | Technology | 2025-05-31 18:16:59 |
+| 11 | IPL Final 2025             | The ultimate showdown of IPL cricket giants                       | Narendra Modi Stadium, Ahmedabad              | 2025-05-29 18:30:00 |      132000 |          130000 | 2500.00 | NULL      | Sports     | 2025-05-31 18:16:59 |
+| 12 | ISL Grand Finale           | Indian Super League football final match                          | Jawaharlal Nehru Stadium, Kochi               | 2025-12-12 19:00:00 |       40000 |           38000 | 1000.00 | NULL      | Sports     | 2025-05-31 18:16:59 |
+| 13 | Shakespeare in India       | Adaptation of Macbeth by Indian theatre artists                   | Ravindra Kalakshetra, Bengaluru               | 2025-08-18 18:30:00 |         600 |             550 |  400.00 | NULL      | Theatre    | 2025-05-31 18:16:59 |
+| 14 | Marathi Natya Mahotsav     | Celebration of Marathi plays and culture                          | Bal Gandharva Rang Mandir, Pune               | 2025-07-10 17:00:00 |         500 |             470 |  300.00 | NULL      | Theatre    | 2025-05-31 18:16:59 |
+| 15 | Art of Living Mega Satsang | Guided meditation and wisdom talk by Sri Sri Ravi Shankar         | Art of Living International Center, Bengaluru | 2025-06-22 07:00:00 |        5000 |            4800 |    0.00 | NULL      | Spiritual  | 2025-05-31 18:16:59 |
+| 16 | Kumbh Darshan Special      | Virtual tour and discourse on the spiritual essence of Kumbh Mela | Online Event                                  | 2025-09-05 08:00:00 |       10000 |            9900 |  100.00 | NULL      | Spiritual  | 2025-05-31 18:16:59 |
+| 17 | IIT-JEE Bootcamp           | Crash course and strategies by top IITians                        | Chennai Trade Centre                          | 2025-06-15 09:00:00 |        1000 |             900 | 1500.00 | NULL      | Education  | 2025-05-31 18:16:59 |
+| 18 | NEET Masterclass           | One-day seminar with top NEET mentors and doctors                 | Science City Auditorium, Kolkata              | 2025-07-05 09:30:00 |         800 |             780 | 1200.00 | NULL      | Education  | 2025-05-31 18:16:59 |
++----+----------------------------+-------------------------------------------------------------------+-----------------------------------------------+---------------------+-------------+-----------------+---------+-----------+------------+---------------------+
+18 rows in set (0.00 sec)
+
+mysql> DELETE FROM events WHERE id IN (1, 2, 3);
+Query OK, 3 rows affected (0.03 sec)
+
+mysql> select * from events;
++----+----------------------------+-------------------------------------------------------------------+-----------------------------------------------+---------------------+-------------+-----------------+---------+-----------+------------+---------------------+
+| id | title                      | description                                                       | venue                                         | event_date          | total_seats | available_seats | price   | image_url | category   | created_at          |
++----+----------------------------+-------------------------------------------------------------------+-----------------------------------------------+---------------------+-------------+-----------------+---------+-----------+------------+---------------------+
+|  4 | Football Championship      | Championship match between top teams                              | Sports Stadium                                | 2025-09-05 16:00:00 |       50000 |           48500 |   85.00 | NULL      | Sports     | 2025-05-30 19:51:03 |
+|  5 | Bollywood Music Night      | Live performance by top Bollywood playback singers                | Wankhede Stadium, Mumbai                      | 2025-08-01 19:00:00 |       15000 |           14500 | 1200.00 | NULL      | Music      | 2025-05-31 18:16:59 |
+|  6 | Classical Raaga Festival   | An evening of Indian classical music featuring top artists        | Siri Fort Auditorium, Delhi                   | 2025-07-20 18:00:00 |         800 |             750 |  600.00 | NULL      | Music      | 2025-05-31 18:16:59 |
+|  7 | Stand-Up Comedy Bash       | Laugh out loud with India's top comedians                         | The Habitat, Mumbai                           | 2025-06-25 20:00:00 |         400 |             370 |  750.00 | NULL      | Comedy     | 2025-05-31 18:16:59 |
+|  8 | Hyderabad Laugh Fest       | Stand-up show with regional language comedians                    | Shilpakala Vedika, Hyderabad                  | 2025-07-15 19:00:00 |         500 |             480 |  500.00 | NULL      | Comedy     | 2025-05-31 18:16:59 |
+|  9 | India Tech Summit 2025     | Explore India's innovations in AI, blockchain, and startups       | Bangalore International Exhibition Centre     | 2025-09-10 10:00:00 |        3000 |            2900 | 2500.00 | NULL      | Technology | 2025-05-31 18:16:59 |
+| 10 | AI & Robotics Expo         | Showcasing the future of automation in India                      | Pragati Maidan, Delhi                         | 2025-10-05 11:00:00 |        2000 |            1950 | 1800.00 | NULL      | Technology | 2025-05-31 18:16:59 |
+| 11 | IPL Final 2025             | The ultimate showdown of IPL cricket giants                       | Narendra Modi Stadium, Ahmedabad              | 2025-05-29 18:30:00 |      132000 |          130000 | 2500.00 | NULL      | Sports     | 2025-05-31 18:16:59 |
+| 12 | ISL Grand Finale           | Indian Super League football final match                          | Jawaharlal Nehru Stadium, Kochi               | 2025-12-12 19:00:00 |       40000 |           38000 | 1000.00 | NULL      | Sports     | 2025-05-31 18:16:59 |
+| 13 | Shakespeare in India       | Adaptation of Macbeth by Indian theatre artists                   | Ravindra Kalakshetra, Bengaluru               | 2025-08-18 18:30:00 |         600 |             550 |  400.00 | NULL      | Theatre    | 2025-05-31 18:16:59 |
+| 14 | Marathi Natya Mahotsav     | Celebration of Marathi plays and culture                          | Bal Gandharva Rang Mandir, Pune               | 2025-07-10 17:00:00 |         500 |             470 |  300.00 | NULL      | Theatre    | 2025-05-31 18:16:59 |
+| 15 | Art of Living Mega Satsang | Guided meditation and wisdom talk by Sri Sri Ravi Shankar         | Art of Living International Center, Bengaluru | 2025-06-22 07:00:00 |        5000 |            4800 |    0.00 | NULL      | Spiritual  | 2025-05-31 18:16:59 |
+| 16 | Kumbh Darshan Special      | Virtual tour and discourse on the spiritual essence of Kumbh Mela | Online Event                                  | 2025-09-05 08:00:00 |       10000 |            9900 |  100.00 | NULL      | Spiritual  | 2025-05-31 18:16:59 |
+| 17 | IIT-JEE Bootcamp           | Crash course and strategies by top IITians                        | Chennai Trade Centre                          | 2025-06-15 09:00:00 |        1000 |             900 | 1500.00 | NULL      | Education  | 2025-05-31 18:16:59 |
+| 18 | NEET Masterclass           | One-day seminar with top NEET mentors and doctors                 | Science City Auditorium, Kolkata              | 2025-07-05 09:30:00 |         800 |             780 | 1200.00 | NULL      | Education  | 2025-05-31 18:16:59 |
++----+----------------------------+-------------------------------------------------------------------+-----------------------------------------------+---------------------+-------------+-----------------+---------+-----------+------------+---------------------+
+15 rows in set (0.00 sec)
+
+mysql> 

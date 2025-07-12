@@ -42,8 +42,6 @@ async function initDatabase() {
     try {
         db = await mysql.createPool(dbConfig);
         console.log('Connected to MySQL database');
-        
-        // Test the connection
         const connection = await db.getConnection();
         await connection.ping();
         connection.release();
