@@ -26,31 +26,59 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
+// const dbConfig = {
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'root',
+//     database: 'ticket_booking_system',
+//     waitForConnections: true,
+//     connectionLimit: 10,
+//     queueLimit: 0
+// };
+
+
+// Database configuration using environment variables
 const dbConfig = {
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'ticket_booking_system',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
-};
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    // For production SSL (Railway requires this)
+    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+  };
+  
 
-let db;
-
-async function initDatabase() {
+  // Create connection
+async function connectDB() {
     try {
-        db = await mysql.createPool(dbConfig);
-        console.log('Connected to MySQL database');
-        const connection = await db.getConnection();
-        await connection.ping();
-        connection.release();
-        console.log('Database connection verified');
+      const connection = await mysql.createConnection(dbConfig);
+      console.log('Connected to Railway MySQL database');
+      return connection;
     } catch (error) {
-        console.error('Database connection failed:', error);
-        process.exit(1);
+      console.error('Database connection failed:', error);
+      process.exit(1);
     }
-}
+  }
+  
+  // Use the connection
+  const db = await connectDB();
+
+// let db;
+
+// async function initDatabase() {
+//     try {
+//         db = await mysql.createPool(dbConfig);
+//         console.log('Connected to MySQL database');
+//         const connection = await db.getConnection();
+//         await connection.ping();
+//         connection.release();
+//         console.log('Database connection verified');
+//     } catch (error) {
+//         console.error('Database connection failed:', error);
+//         process.exit(1);
+//     }
+// }
 
 const JWT_SECRET = 'uEuIArHtbuCoPBcUyOpwIRx9Wj0SL0kI97RwCYLzvcw';
 
